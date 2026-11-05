@@ -1,0 +1,27 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "cinematch-dmml"
+version = "1.0.0"
+description = "MovieLens 32M end-to-end recommendation pipeline (DM4ML Assignment 2, 2025AG05135)"
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "numpy>=1.24,<3", "scipy>=1.10,<2", "scikit-learn>=1.3,<2",
+    "psycopg[binary]>=3.1,<4", "python-dotenv>=1.0,<2", "matplotlib>=3.7,<4",
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=7.4,<10"]
+
+[project.scripts]
+cinematch = "cinematch.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+pythonpath = ["src"]

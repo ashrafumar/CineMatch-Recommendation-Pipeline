@@ -1,0 +1,118 @@
+# Secrets / environments
+.env
+.venv/
+venv/
+*.local
+# Python / OS
+__pycache__/
+*.py[cod]
+*.egg-info/
+.pytest_cache/
+.DS_Store
+__MACOSX/
+# Full MovieLens dataset, generated exports and trained weights
+data/raw/*
+!data/raw/.gitkeep
+data/processed/*
+!data/processed/.gitkeep
+data/features/*
+!data/features/.gitkeep
+data/errors/*
+!data/errors/.gitkeep
+models/*
+!models/.gitkeep
+artifacts/
+*.npz
+*.sqlite
+*.db
+.coverage
+
+# Local secrets
+.env
+.env.*
+!.env.example
+!configs/.env.example
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# MovieLens data and generated datasets
+data/raw/*
+data/processed/*
+data/features/*
+data/errors/*
+!data/**/.gitkeep
+!data/**/README.md
+
+# Runtime artifacts and trained models
+artifacts/
+models/*.npz
+models/*.pkl
+models/*.joblib
+*.sqlite
+*.sqlite3
+*.db
+
+# Operating system and editor
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log
+
+# Local secrets
+.env
+.env.*
+!.env.example
+!configs/.env.example
+*.pem
+*.key
+
+# Python
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+*.egg-info/
+build/
+dist/
+
+# MovieLens data and generated datasets
+data/raw/*
+data/processed/*
+data/features/*
+data/errors/*
+!data/**/.gitkeep
+!data/**/README.md
+
+# Runtime artifacts and trained models
+artifacts/
+models/*.npz
+models/*.pkl
+models/*.joblib
+*.sqlite
+*.sqlite3
+*.db
+
+# Operating system and editor
+.DS_Store
+.idea/
+.vscode/
+
+# Logs
+*.log

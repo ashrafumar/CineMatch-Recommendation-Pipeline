@@ -1,0 +1,1006 @@
+{
+  "roll_number": "2025AG05135",
+  "started_at": "2026-11-05T05:11:25.696968+00:00",
+  "steps": [
+    {
+      "name": "verify",
+      "result": {
+        "links.csv": "8f033867bcb4e6be8792b21468b4fa6e",
+        "movies.csv": "0df90835c19151f9d819d0822e190797",
+        "ratings.csv": "cf12b74f9ad4b94a011f079e26d4270a",
+        "tags.csv": "963bf4fa4de6b8901868fddd3eb54567"
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "init_stage1",
+      "result": null,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "ingest_movies",
+      "result": 87585,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "ingest_links",
+      "result": 87585,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "ingest_ratings",
+      "result": 32000204,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "reconcile",
+      "result": {
+        "movies.csv": [
+          87585,
+          87585,
+          true
+        ],
+        "links.csv": [
+          87585,
+          87585,
+          true
+        ],
+        "ratings.csv": [
+          32000204,
+          32000204,
+          true
+        ]
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "init_stage2",
+      "result": null,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "profile",
+      "result": {
+        "metrics": [
+          {
+            "name": "ratings_rows",
+            "value": 32000204,
+            "expected": 32000204,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "All rating rows from the source"
+          },
+          {
+            "name": "movies_rows",
+            "value": 87585,
+            "expected": 87585,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "All movie rows from the source"
+          },
+          {
+            "name": "links_rows",
+            "value": 87585,
+            "expected": 87585,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "All link rows from the source"
+          },
+          {
+            "name": "duplicate_movie_ids",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Movie IDs with duplicate records"
+          },
+          {
+            "name": "duplicate_link_ids",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Movie IDs with duplicate link records"
+          },
+          {
+            "name": "duplicate_user_movie_pairs",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Repeated user-movie keys (no silent deduplication)"
+          },
+          {
+            "name": "invalid_rating",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Rating must be one of 0.5, 1.0, ..., 5.0"
+          },
+          {
+            "name": "invalid_rating_ids",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "User/movie identifiers must be positive"
+          },
+          {
+            "name": "invalid_rating_timestamp",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "UNIX timestamps must be positive"
+          },
+          {
+            "name": "invalid_movie_ids",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Movie identifiers must be positive"
+          },
+          {
+            "name": "blank_movie_titles",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Blank movie titles"
+          },
+          {
+            "name": "orphan_ratings",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Ratings with missing catalog entry"
+          },
+          {
+            "name": "orphan_links",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Links with missing catalog entry"
+          },
+          {
+            "name": "missing_link_movies",
+            "value": 0,
+            "expected": 0,
+            "severity": "BLOCKER",
+            "passed": true,
+            "description": "Movies lacking a links row"
+          },
+          {
+            "name": "no_genres_listed",
+            "value": 7080,
+            "expected": null,
+            "severity": "INFO",
+            "passed": true,
+            "description": "Movies with no classified genres"
+          },
+          {
+            "name": "distinct_users",
+            "value": 200948,
+            "expected": null,
+            "severity": "INFO",
+            "passed": true,
+            "description": "Unique rating users"
+          },
+          {
+            "name": "distinct_rated_movies",
+            "value": 84432,
+            "expected": null,
+            "severity": "INFO",
+            "passed": true,
+            "description": "Unique rated movies"
+          },
+          {
+            "name": "min_rating_timestamp",
+            "value": 789652004,
+            "expected": null,
+            "severity": "INFO",
+            "passed": true,
+            "description": "Earliest observed rating Unix timestamp"
+          },
+          {
+            "name": "max_rating_timestamp",
+            "value": 1697164147,
+            "expected": null,
+            "severity": "INFO",
+            "passed": true,
+            "description": "Latest observed rating Unix timestamp"
+          }
+        ],
+        "distributions": {
+          "ratings_distribution": [
+            {
+              "label": "0.5",
+              "count": 525132
+            },
+            {
+              "label": "1.0",
+              "count": 946675
+            },
+            {
+              "label": "1.5",
+              "count": 531063
+            },
+            {
+              "label": "2.0",
+              "count": 2028622
+            },
+            {
+              "label": "2.5",
+              "count": 1685386
+            },
+            {
+              "label": "3.0",
+              "count": 6054990
+            },
+            {
+              "label": "3.5",
+              "count": 4290105
+            },
+            {
+              "label": "4.0",
+              "count": 8367654
+            },
+            {
+              "label": "4.5",
+              "count": 2974000
+            },
+            {
+              "label": "5.0",
+              "count": 4596577
+            }
+          ],
+          "user_history_distribution": [
+            {
+              "label": "100+",
+              "count": 80675
+            },
+            {
+              "label": "20-49",
+              "count": 72604
+            },
+            {
+              "label": "50-99",
+              "count": 47669
+            }
+          ],
+          "movie_history_distribution": [
+            {
+              "label": "1",
+              "count": 18607
+            },
+            {
+              "label": "100+",
+              "count": 12191
+            },
+            {
+              "label": "10-19",
+              "count": 8611
+            },
+            {
+              "label": "20-49",
+              "count": 7316
+            },
+            {
+              "label": "2-4",
+              "count": 21941
+            },
+            {
+              "label": "50-99",
+              "count": 3843
+            },
+            {
+              "label": "5-9",
+              "count": 11923
+            }
+          ],
+          "genres_distribution": [
+            {
+              "label": "Drama",
+              "count": 34175
+            },
+            {
+              "label": "Comedy",
+              "count": 23124
+            },
+            {
+              "label": "Thriller",
+              "count": 11823
+            },
+            {
+              "label": "Romance",
+              "count": 10369
+            },
+            {
+              "label": "Action",
+              "count": 9668
+            },
+            {
+              "label": "Documentary",
+              "count": 9363
+            },
+            {
+              "label": "Horror",
+              "count": 8654
+            },
+            {
+              "label": "(no genres listed)",
+              "count": 7080
+            },
+            {
+              "label": "Crime",
+              "count": 6976
+            },
+            {
+              "label": "Adventure",
+              "count": 5402
+            },
+            {
+              "label": "Sci-Fi",
+              "count": 4907
+            },
+            {
+              "label": "Animation",
+              "count": 4617
+            },
+            {
+              "label": "Children",
+              "count": 4520
+            },
+            {
+              "label": "Mystery",
+              "count": 4013
+            },
+            {
+              "label": "Fantasy",
+              "count": 3851
+            },
+            {
+              "label": "War",
+              "count": 2325
+            },
+            {
+              "label": "Western",
+              "count": 1696
+            },
+            {
+              "label": "Musical",
+              "count": 1059
+            },
+            {
+              "label": "Film-Noir",
+              "count": 353
+            },
+            {
+              "label": "IMAX",
+              "count": 195
+            }
+          ],
+          "ratings_by_year": [
+            {
+              "label": "1995",
+              "count": 4
+            },
+            {
+              "label": "1996",
+              "count": 1571368
+            },
+            {
+              "label": "1997",
+              "count": 685388
+            },
+            {
+              "label": "1998",
+              "count": 301691
+            },
+            {
+              "label": "1999",
+              "count": 1174629
+            },
+            {
+              "label": "2000",
+              "count": 1912322
+            },
+            {
+              "label": "2001",
+              "count": 1160098
+            },
+            {
+              "label": "2002",
+              "count": 849762
+            },
+            {
+              "label": "2003",
+              "count": 1011000
+            },
+            {
+              "label": "2004",
+              "count": 1139068
+            },
+            {
+              "label": "2005",
+              "count": 1752573
+            },
+            {
+              "label": "2006",
+              "count": 1141704
+            },
+            {
+              "label": "2007",
+              "count": 1023813
+            },
+            {
+              "label": "2008",
+              "count": 1117071
+            },
+            {
+              "label": "2009",
+              "count": 890696
+            },
+            {
+              "label": "2010",
+              "count": 860073
+            },
+            {
+              "label": "2011",
+              "count": 729301
+            },
+            {
+              "label": "2012",
+              "count": 695493
+            },
+            {
+              "label": "2013",
+              "count": 563301
+            },
+            {
+              "label": "2014",
+              "count": 518537
+            },
+            {
+              "label": "2015",
+              "count": 1743866
+            },
+            {
+              "label": "2016",
+              "count": 1918739
+            },
+            {
+              "label": "2017",
+              "count": 1827953
+            },
+            {
+              "label": "2018",
+              "count": 1391057
+            },
+            {
+              "label": "2019",
+              "count": 1385467
+            },
+            {
+              "label": "2020",
+              "count": 1688159
+            },
+            {
+              "label": "2021",
+              "count": 1239912
+            },
+            {
+              "label": "2022",
+              "count": 913105
+            },
+            {
+              "label": "2023",
+              "count": 794054
+            }
+          ]
+        },
+        "passed": true,
+        "roll_number": "2025AG05135",
+        "stage": 2,
+        "run_id": 3,
+        "source_fingerprint": "movies.csv:0df90835c19151f9d819d0822e190797:87585|links.csv:8f033867bcb4e6be8792b21468b4fa6e:87585|ratings.csv:cf12b74f9ad4b94a011f079e26d4270a:32000204",
+        "generated_at": "2026-11-05T05:11:56.399865+00:00"
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "prepare",
+      "result": {
+        "movies": 87585,
+        "links": 87585,
+        "ratings": 32000204
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "init_stage3",
+      "result": null,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "build_features",
+      "result": {
+        "run_id": 1,
+        "preparation_id": 1,
+        "specification_version": "global_time_80_10_10_v1",
+        "status": "COMPLETED",
+        "train_end": 1538551305,
+        "validation_end": 1604605535,
+        "train_rows": 25600164,
+        "validation_rows": 3200021,
+        "test_rows": 3200019,
+        "user_feature_rows": 170491,
+        "movie_feature_rows": 87585,
+        "genre_feature_rows": 147090,
+        "user_genre_rows": 2789064,
+        "global_mean": 3.53186989348974,
+        "train_end_utc": "2018-10-03T07:21:45+00:00",
+        "validation_end_utc": "2020-11-05T19:45:35+00:00"
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "init_stage4",
+      "result": null,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "train_svd",
+      "result": {
+        "model_run_id": 1,
+        "feature_run_id": 1,
+        "artifact_path": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage4/svd_run_1_2025AG05135.npz",
+        "reused": true
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "train_ranker",
+      "result": {
+        "model_run_id": 2,
+        "reused": true,
+        "artifact_path": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage4/learned_hybrid_run_2_2025AG05135.npz",
+        "fit_end": 1584789266
+      },
+      "status": "COMPLETED"
+    },
+    {
+      "name": "init_stage5",
+      "result": null,
+      "status": "COMPLETED"
+    },
+    {
+      "name": "validate_and_select",
+      "result": {
+        "roll_number": "2025AG05135",
+        "evaluation_run_id": 4,
+        "split": "validation",
+        "users_evaluated": 10895,
+        "relevant_interactions": 577947,
+        "partial": false,
+        "k": 10,
+        "metrics": {
+          "popularity": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.04891922997741931,
+              "precision_at_k": 0.2077374942634198,
+              "diversity_at_k": 0.7691948577319101,
+              "ndcg_at_k": 0.22071791617004377,
+              "hit_rate_at_k": 0.5663148233134465,
+              "distinct_recommended_movies": 241,
+              "catalog_coverage": 0.0027516127190729007
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.025306104739705144,
+              "precision_at_k": 0.04058614564831234,
+              "diversity_at_k": 0.788478604591693,
+              "ndcg_at_k": 0.048477544800074865,
+              "hit_rate_at_k": 0.22291296625222023,
+              "distinct_recommended_movies": 241,
+              "catalog_coverage": 0.0027516127190729007
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "collaborative": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.014344894822753512,
+              "precision_at_k": 0.03493345571363068,
+              "diversity_at_k": 0.811889528507834,
+              "ndcg_at_k": 0.05012781724816105,
+              "hit_rate_at_k": 0.23249196879302433,
+              "distinct_recommended_movies": 878,
+              "catalog_coverage": 0.010024547582348576
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03885433840695935,
+              "precision_at_k": 0.05938425103611535,
+              "diversity_at_k": 0.777475623587721,
+              "ndcg_at_k": 0.07264265849060818,
+              "hit_rate_at_k": 0.3108348134991119,
+              "distinct_recommended_movies": 878,
+              "catalog_coverage": 0.010024547582348576
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.0033308066988413944,
+              "precision_at_k": 0.023945723027803085,
+              "diversity_at_k": 0.8273544973544668,
+              "ndcg_at_k": 0.04001006632133037,
+              "hit_rate_at_k": 0.19728615139018224,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "genre": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.002332682209210743,
+              "precision_at_k": 0.016695731987149676,
+              "diversity_at_k": 0.5714726671862761,
+              "ndcg_at_k": 0.027760962460188044,
+              "hit_rate_at_k": 0.13758604864616797,
+              "distinct_recommended_movies": 227,
+              "catalog_coverage": 0.0025917679968031054
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.00011157451573720727,
+              "precision_at_k": 0.0005624629958555361,
+              "diversity_at_k": 0.002063633031661451,
+              "ndcg_at_k": 0.0005032615353192251,
+              "hit_rate_at_k": 0.004736530491415038,
+              "distinct_recommended_movies": 227,
+              "catalog_coverage": 0.0025917679968031054
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.0033308066988413944,
+              "precision_at_k": 0.023945723027803085,
+              "diversity_at_k": 0.8273544973544668,
+              "ndcg_at_k": 0.04001006632133037,
+              "hit_rate_at_k": 0.19728615139018224,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "fixed_hybrid": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05135739762393801,
+              "precision_at_k": 0.21114272602110631,
+              "diversity_at_k": 0.676064680915481,
+              "ndcg_at_k": 0.22536259014303808,
+              "hit_rate_at_k": 0.5841211564938045,
+              "distinct_recommended_movies": 779,
+              "catalog_coverage": 0.008894217046297882
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03316988108926723,
+              "precision_at_k": 0.0515689757252807,
+              "diversity_at_k": 0.48810759321959135,
+              "ndcg_at_k": 0.06345792459160296,
+              "hit_rate_at_k": 0.2803433984606276,
+              "distinct_recommended_movies": 779,
+              "catalog_coverage": 0.008894217046297882
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "learned_hybrid": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05156965721493462,
+              "precision_at_k": 0.2110509407985271,
+              "diversity_at_k": 0.7261026823816635,
+              "ndcg_at_k": 0.22519891646703252,
+              "hit_rate_at_k": 0.582744378155117,
+              "distinct_recommended_movies": 427,
+              "catalog_coverage": 0.0048752640292287494
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03385447796431404,
+              "precision_at_k": 0.05127294256956722,
+              "diversity_at_k": 0.6494942202101271,
+              "ndcg_at_k": 0.06293003095629214,
+              "hit_rate_at_k": 0.275902901124926,
+              "distinct_recommended_movies": 427,
+              "catalog_coverage": 0.0048752640292287494
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_0": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05135739762393801,
+              "precision_at_k": 0.21114272602110631,
+              "diversity_at_k": 0.676064680915481,
+              "ndcg_at_k": 0.22536259014303808,
+              "hit_rate_at_k": 0.5841211564938045,
+              "distinct_recommended_movies": 779,
+              "catalog_coverage": 0.008894217046297882
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03316988108926723,
+              "precision_at_k": 0.0515689757252807,
+              "diversity_at_k": 0.48810759321959135,
+              "ndcg_at_k": 0.06345792459160296,
+              "hit_rate_at_k": 0.2803433984606276,
+              "distinct_recommended_movies": 779,
+              "catalog_coverage": 0.008894217046297882
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_1": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05310634452313557,
+              "precision_at_k": 0.21329050022945856,
+              "diversity_at_k": 0.7345761252386146,
+              "ndcg_at_k": 0.2279104305399533,
+              "hit_rate_at_k": 0.5914639743001376,
+              "distinct_recommended_movies": 815,
+              "catalog_coverage": 0.009305246332134498
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03881072669813581,
+              "precision_at_k": 0.05849615156897504,
+              "diversity_at_k": 0.6768234564228248,
+              "ndcg_at_k": 0.07167542640462418,
+              "hit_rate_at_k": 0.3040260509177028,
+              "distinct_recommended_movies": 815,
+              "catalog_coverage": 0.009305246332134498
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_2": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05066673296556341,
+              "precision_at_k": 0.21050022946305216,
+              "diversity_at_k": 0.6651113984459057,
+              "ndcg_at_k": 0.22448168126652362,
+              "hit_rate_at_k": 0.5811840293712712,
+              "distinct_recommended_movies": 687,
+              "catalog_coverage": 0.007843808871382085
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.03094229332935267,
+              "precision_at_k": 0.04949674363528665,
+              "diversity_at_k": 0.45278017684717886,
+              "ndcg_at_k": 0.060616745725520116,
+              "hit_rate_at_k": 0.27087033747779754,
+              "distinct_recommended_movies": 687,
+              "catalog_coverage": 0.007843808871382085
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_3": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.04731831152381102,
+              "precision_at_k": 0.20537861404313512,
+              "diversity_at_k": 0.5725503867687793,
+              "ndcg_at_k": 0.21848096800314643,
+              "hit_rate_at_k": 0.5612666360715924,
+              "distinct_recommended_movies": 798,
+              "catalog_coverage": 0.009111149169378318
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.020142692498123418,
+              "precision_at_k": 0.032978093546477016,
+              "diversity_at_k": 0.1542448831165044,
+              "ndcg_at_k": 0.04126275786154795,
+              "hit_rate_at_k": 0.20663114268798105,
+              "distinct_recommended_movies": 798,
+              "catalog_coverage": 0.009111149169378318
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_4": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.049370540601297495,
+              "precision_at_k": 0.2080128499311571,
+              "diversity_at_k": 0.6212603734998808,
+              "ndcg_at_k": 0.2215725946494443,
+              "hit_rate_at_k": 0.572739788893988,
+              "distinct_recommended_movies": 638,
+              "catalog_coverage": 0.007284352343437803
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.02676170842447489,
+              "precision_at_k": 0.04147424511545259,
+              "diversity_at_k": 0.31134828910682844,
+              "ndcg_at_k": 0.05123412325865067,
+              "hit_rate_at_k": 0.24363528715216104,
+              "distinct_recommended_movies": 638,
+              "catalog_coverage": 0.007284352343437803
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          },
+          "blend_5": {
+            "all": {
+              "evaluated_users": 10895,
+              "relevant_interactions": 577947,
+              "recall_at_k": 0.05353709459193031,
+              "precision_at_k": 0.21386874713170737,
+              "diversity_at_k": 0.7603260101391819,
+              "ndcg_at_k": 0.22845559505040686,
+              "hit_rate_at_k": 0.5943093162000918,
+              "distinct_recommended_movies": 858,
+              "catalog_coverage": 0.009796197979106011
+            },
+            "known_user": {
+              "evaluated_users": 3378,
+              "relevant_interactions": 62050,
+              "recall_at_k": 0.040200016810486267,
+              "precision_at_k": 0.06036116044996967,
+              "diversity_at_k": 0.7598740769058508,
+              "ndcg_at_k": 0.07343373526827071,
+              "hit_rate_at_k": 0.3132030787448194,
+              "distinct_recommended_movies": 858,
+              "catalog_coverage": 0.009796197979106011
+            },
+            "cold_user": {
+              "evaluated_users": 7517,
+              "relevant_interactions": 515897,
+              "recall_at_k": 0.05953052930600768,
+              "precision_at_k": 0.28285220167619785,
+              "diversity_at_k": 0.7605291005292306,
+              "ndcg_at_k": 0.2981195357639994,
+              "hit_rate_at_k": 0.7206332313422908,
+              "distinct_recommended_movies": 10,
+              "catalog_coverage": 0.00011417480162128218
+            }
+          }
+        },
+        "selection_id": 2,
+        "selected_strategy": "blend_5",
+        "selected_weights": [
+          0.05,
+          0.9,
+          0.05
+        ],
+        "limitations": [
+          "Unrated movies are not known negatives",
+          "Ratings do not represent logged impressions",
+          "Movie metadata is a single snapshot, not historically versioned",
+          "Precision@K treats unobserved items as nonhits, not proven negatives",
+          "Diversity@K excludes movies with missing genre labels from pairwise comparisons"
+        ],
+        "report_path": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage5/evaluation_validation_run_4_2025AG05135.json",
+        "exports": {
+          "csv": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage5/evaluation_validation_run_4_2025AG05135.csv",
+          "markdown": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage5/evaluation_validation_run_4_2025AG05135.md",
+          "chart": "/Users/umarashraf/MyCode/Python/DMDL/CineMatch/artifacts/stage5/evaluation_validation_run_4_2025AG05135_ndcg.png"
+        }
+      },
+      "status": "COMPLETED"
+    }
+  ],
+  "status": "COMPLETED",
+  "rank": 32,
+  "max_users": null,
+  "completed_at": "2026-11-05T05:19:49.773997+00:00"
+}

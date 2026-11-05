@@ -1,0 +1,342 @@
+{
+  "roll_number": "2025AG05135",
+  "evaluation_run_id": 2,
+  "split": "validation",
+  "users_evaluated": 10895,
+  "relevant_interactions": 577947,
+  "partial": false,
+  "k": 10,
+  "metrics": {
+    "popularity": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.04891922997741931,
+        "ndcg_at_k": 0.22071791617004377,
+        "hit_rate_at_k": 0.5663148233134465,
+        "distinct_recommended_movies": 241,
+        "catalog_coverage": 0.0027516127190729007
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.025306104739705144,
+        "ndcg_at_k": 0.048477544800074865,
+        "hit_rate_at_k": 0.22291296625222023,
+        "distinct_recommended_movies": 241,
+        "catalog_coverage": 0.0027516127190729007
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "collaborative": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.014344894822753512,
+        "ndcg_at_k": 0.05012781724816105,
+        "hit_rate_at_k": 0.23249196879302433,
+        "distinct_recommended_movies": 878,
+        "catalog_coverage": 0.010024547582348576
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03885433840695935,
+        "ndcg_at_k": 0.07264265849060818,
+        "hit_rate_at_k": 0.3108348134991119,
+        "distinct_recommended_movies": 878,
+        "catalog_coverage": 0.010024547582348576
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.0033308066988413944,
+        "ndcg_at_k": 0.04001006632133037,
+        "hit_rate_at_k": 0.19728615139018224,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "genre": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.002332682209210743,
+        "ndcg_at_k": 0.027760962460188044,
+        "hit_rate_at_k": 0.13758604864616797,
+        "distinct_recommended_movies": 227,
+        "catalog_coverage": 0.0025917679968031054
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.00011157451573720727,
+        "ndcg_at_k": 0.0005032615353192251,
+        "hit_rate_at_k": 0.004736530491415038,
+        "distinct_recommended_movies": 227,
+        "catalog_coverage": 0.0025917679968031054
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.0033308066988413944,
+        "ndcg_at_k": 0.04001006632133037,
+        "hit_rate_at_k": 0.19728615139018224,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "fixed_hybrid": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05135739762393801,
+        "ndcg_at_k": 0.22536259014303808,
+        "hit_rate_at_k": 0.5841211564938045,
+        "distinct_recommended_movies": 779,
+        "catalog_coverage": 0.008894217046297882
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03316988108926723,
+        "ndcg_at_k": 0.06345792459160296,
+        "hit_rate_at_k": 0.2803433984606276,
+        "distinct_recommended_movies": 779,
+        "catalog_coverage": 0.008894217046297882
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "learned_hybrid": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05156965721493462,
+        "ndcg_at_k": 0.22519891646703252,
+        "hit_rate_at_k": 0.582744378155117,
+        "distinct_recommended_movies": 427,
+        "catalog_coverage": 0.0048752640292287494
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03385447796431404,
+        "ndcg_at_k": 0.06293003095629214,
+        "hit_rate_at_k": 0.275902901124926,
+        "distinct_recommended_movies": 427,
+        "catalog_coverage": 0.0048752640292287494
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_0": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05135739762393801,
+        "ndcg_at_k": 0.22536259014303808,
+        "hit_rate_at_k": 0.5841211564938045,
+        "distinct_recommended_movies": 779,
+        "catalog_coverage": 0.008894217046297882
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03316988108926723,
+        "ndcg_at_k": 0.06345792459160296,
+        "hit_rate_at_k": 0.2803433984606276,
+        "distinct_recommended_movies": 779,
+        "catalog_coverage": 0.008894217046297882
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_1": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05310634452313557,
+        "ndcg_at_k": 0.2279104305399533,
+        "hit_rate_at_k": 0.5914639743001376,
+        "distinct_recommended_movies": 815,
+        "catalog_coverage": 0.009305246332134498
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03881072669813581,
+        "ndcg_at_k": 0.07167542640462418,
+        "hit_rate_at_k": 0.3040260509177028,
+        "distinct_recommended_movies": 815,
+        "catalog_coverage": 0.009305246332134498
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_2": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05066673296556341,
+        "ndcg_at_k": 0.22448168126652362,
+        "hit_rate_at_k": 0.5811840293712712,
+        "distinct_recommended_movies": 687,
+        "catalog_coverage": 0.007843808871382085
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.03094229332935267,
+        "ndcg_at_k": 0.060616745725520116,
+        "hit_rate_at_k": 0.27087033747779754,
+        "distinct_recommended_movies": 687,
+        "catalog_coverage": 0.007843808871382085
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_3": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.04731831152381102,
+        "ndcg_at_k": 0.21848096800314643,
+        "hit_rate_at_k": 0.5612666360715924,
+        "distinct_recommended_movies": 798,
+        "catalog_coverage": 0.009111149169378318
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.020142692498123418,
+        "ndcg_at_k": 0.04126275786154795,
+        "hit_rate_at_k": 0.20663114268798105,
+        "distinct_recommended_movies": 798,
+        "catalog_coverage": 0.009111149169378318
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_4": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.049370540601297495,
+        "ndcg_at_k": 0.2215725946494443,
+        "hit_rate_at_k": 0.572739788893988,
+        "distinct_recommended_movies": 638,
+        "catalog_coverage": 0.007284352343437803
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.02676170842447489,
+        "ndcg_at_k": 0.05123412325865067,
+        "hit_rate_at_k": 0.24363528715216104,
+        "distinct_recommended_movies": 638,
+        "catalog_coverage": 0.007284352343437803
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    },
+    "blend_5": {
+      "all": {
+        "evaluated_users": 10895,
+        "relevant_interactions": 577947,
+        "recall_at_k": 0.05353709459193031,
+        "ndcg_at_k": 0.22845559505040686,
+        "hit_rate_at_k": 0.5943093162000918,
+        "distinct_recommended_movies": 858,
+        "catalog_coverage": 0.009796197979106011
+      },
+      "known_user": {
+        "evaluated_users": 3378,
+        "relevant_interactions": 62050,
+        "recall_at_k": 0.040200016810486267,
+        "ndcg_at_k": 0.07343373526827071,
+        "hit_rate_at_k": 0.3132030787448194,
+        "distinct_recommended_movies": 858,
+        "catalog_coverage": 0.009796197979106011
+      },
+      "cold_user": {
+        "evaluated_users": 7517,
+        "relevant_interactions": 515897,
+        "recall_at_k": 0.05953052930600768,
+        "ndcg_at_k": 0.2981195357639994,
+        "hit_rate_at_k": 0.7206332313422908,
+        "distinct_recommended_movies": 10,
+        "catalog_coverage": 0.00011417480162128218
+      }
+    }
+  },
+  "selection_id": 1,
+  "selected_strategy": "blend_5",
+  "selected_weights": [
+    0.05,
+    0.9,
+    0.05
+  ],
+  "limitations": [
+    "Unrated movies are not known negatives",
+    "Ratings do not represent logged impressions",
+    "Movie metadata is a single snapshot, not historically versioned"
+  ]
+}
